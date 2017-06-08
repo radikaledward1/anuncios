@@ -1,0 +1,13 @@
+<div class="anuncio">
+	<a class="anuncio-link" ng-href="/anuncios/angularjs/{{anuncio.id}}">
+		<div layout="row">
+			<div class="image-container">
+				<img ng-src="{{anuncio.imagen}}" />
+			</div>
+			<div layout="column">
+				<h3>{{anuncio.titulo}}</h3>
+				<p>{{anuncio.contenido}}</p>
+			</div>
+		</div>
+	</a>
+</div>

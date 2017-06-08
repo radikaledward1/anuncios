@@ -1,0 +1,52 @@
+<md-dialog flex="20" flex-sm="70" flex-xs="85" style="max-width:800px;max-height:810px; ">
+
+	<!-- Barra de Herramientas -->
+	<md-toolbar>
+		<div class="md-toolbar-tools" style="background: #FF4081;">
+			<span>Nuevo Anuncio</span>
+		</div>
+	</md-toolbar>
+
+	<!-- Contenido -->
+	<md-dialog-content class="md-padding">
+
+	<form>
+
+		<md-input-container class="md-block">
+			<label>Titulo</label>
+			<input type="text" ng-model="titulo">
+		</md-input-container>
+
+		<md-input-container class="md-block">
+			<label>Contenido</label>
+			<textarea type="text" ng-model="contenido"></textarea>
+		</md-input-container>
+
+		<md-input-container class="md-block">
+		<label>Categorias</label>
+		  <md-select ng-model="categoria" md-on-open="loadcategories()">
+		    <md-option ng-repeat="categoria in categorias" ng-value="categoria.titulo" >
+		    {{categoria.titulo}}
+		    </md-option>
+		  </md-select>
+		</md-input-container>
+
+		<md-input-container class="md-block">
+			<p><label>Imagen</label></p>
+		</md-input-container>
+
+		<input type="file" name="image" ngf-select ng-model="imagefile" ngf-accept="'image/*'" ngf-pattern="'image/*'">
+
+	</form>
+
+	</md-dialog-content>
+
+	<!-- Botones de Accion -->
+	<md-dialog-actions>
+	    <md-button ng-click="close()" ng-disabled="onuse">Cancelar</md-button>
+	    <md-button class="md-raised" style="background: #FF4081; color: #ffffff;" ng-click="save()" ng-disabled="onuse">Crear</md-button>
+    </md-dialog-actions>
+
+    <span ng-show="errormsg">{{errormsg}}</span>
+
+</md-dialog>

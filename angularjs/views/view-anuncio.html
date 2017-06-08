@@ -1,0 +1,47 @@
+<div layout="row">
+	<div flex></div>
+	<div flex flex-sm="95" flex-xs="95">
+		<md-card>
+
+			<!-- Imagen principal -->
+			<img ng-src="{{anuncio.imagen}}" />
+
+			<!-- Titulos -->
+			<md-card-title>
+			    <md-card-title-text>
+			      <span class="md-headline">{{anuncio.titulo}}</span>
+			      <span class="md-subhead">{{anuncio.categoria}}</span>
+			    </md-card-title-text>
+			    <span>Publicado: {{anuncio.created_at}}</span>
+		    </md-card-title>
+
+			<!-- Acciones -->
+		    <md-card-actions layout="row">
+
+		    <md-card-icon-actions>
+			    <md-button>
+				    <md-tooltip md-direction="top">Contactar por email</md-tooltip>
+				    <md-icon md-svg-icon="img/anuncios-detalle-email.svg"></md-icon>
+			    </md-button>
+			    <md-button>
+				    <md-tooltip md-direction="top">Contactar por telefono</md-tooltip>
+				    <md-icon md-svg-icon="img/anuncios-detalle-phone.svg"></md-icon>
+			    </md-button>
+		    </md-card-icon-actions>
+
+		    <md-button>
+		        <md-tooltip md-direction="top">Agregar a favoritos</md-tooltip>
+			    <md-icon md-svg-icon="img/anuncios-detalle-favoritos.svg"></md-icon>
+		    </md-button>
+
+			</md-card-actions>
+
+			<!-- Contenido -->
+			<md-card-content>
+			<p>{{anuncio.contenido}}</p>
+			</md-card-content>
+
+	    </md-card>
+	</div>
+	<div flex></div>
+</div>

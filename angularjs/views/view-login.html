@@ -1,0 +1,25 @@
+<div ng-controller="loginController">
+  <md-content layout="column" layout-padding>
+  Current user: {{$storage.userid}}
+    <form name="loginForm" ng-submit="submitForm()">
+      <div flex="50" flex-xs="100" flex-offset-xs="0" flex-offset="25" layout-align="center center">
+        <md-input-container class="md-block">
+          <!-- Use floating placeholder instead of label -->
+          <input ng-model="user.email" name="email" type="email" placeholder="Email (required)" ng-required="true">
+          <span ng-show="errorEmail">{{errorEmail}}</span>
+        </md-input-container>
+      </div>
+
+      <div flex="50" flex-xs="100" flex-offset-xs="0" flex-offset="25" layout-align="center center">
+        <md-input-container class="md-block">
+          <input ng-model="user.password" name="password" type="password" placeholder="Password (required)" ng-required="true">
+          <span ng-show="errorPassword">{{errorPassword}}</span>
+        </md-input-container>
+      </div>
+
+       <div flex="50" flex-xs="100" flex-offset-xs="0" flex-offset="25" layout-align="center center">
+          <button type="submit" class="md-button md-raised md-primary">Login</button>
+       </div>
+    </form>
+  </md-content>
+</div>

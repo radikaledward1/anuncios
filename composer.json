@@ -1,0 +1,6 @@
+{
+    "require": {
+        "vluzrmos/lumen-cors": "2.1.*",
+        "palanik/lumen-cors": "dev-master"
+    }
+}

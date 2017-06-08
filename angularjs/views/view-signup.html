@@ -1,0 +1,40 @@
+<div ng-controller="signUpController">
+  <md-content layout="row" layout-padding>
+  Current user: {{$storage.userid}}<br>
+  Mensajes: {{message}}
+      <div flex="25" flex-offset="25" layout-align="center center">
+          <h1 class="md-subhead">Sign Up to our site for <span class="md-title">FREE*</span>.</h1>
+          <br>
+          <h1 class="md-subhead">All fields are required.</h1>
+      </div>
+      <div flex="25" layout-align="center center">
+        <form name="projectForm" ng-submit="submitForm()">
+            <md-input-container class="md-block">
+              <input ng-model="user.nombre" type="nombre" placeholder="Name" ng-required="true">
+              <span ng-show="errorEmail">{{errorName}}</span>
+            </md-input-container>
+
+            <md-input-container class="md-block">
+              <input ng-model="user.email" type="email" placeholder="Email" ng-required="true">
+              <span ng-show="errorEmail">{{errorEmail}}</span>
+            </md-input-container>
+
+            <md-input-container class="md-block">
+              <input ng-model="user.password" type="password" placeholder="Password" ng-required="true">
+              <span ng-show="errorPassword">{{errorPassword}}</span>
+            </md-input-container>
+
+            <md-input-container class="md-block">
+              <input ng-model="user.password" type="password" placeholder="Repeat Password" ng-required="true">
+            </md-input-container>
+
+             <section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
+              <md-button type="submit" class="md-raised md-primary">Sign Up</md-button>
+            </section>
+        </form>
+        <div flex="100" layout-align="center center">
+          <span class="md-caption">* FREE means that you don't need to pay us any money.</span>
+        </div>
+      </div>
+  </md-content>
+</div>
